@@ -1,0 +1,56 @@
+{
+  "name": "youtube-to-m4a-converter",
+  "version": "1.0.0",
+  "description": "YouTube to M4A Converter Desktop App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder -mw"
+  },
+  "build": {
+    "appId": "com.youtube.m4a.converter.v2",
+    "productName": "YT-Converter",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "asarUnpack": [
+      "bin/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "allowElevation": true,
+      "include": "installer.nsh",
+      "guid": "e5b6c7d8-f9a0-4b1c-8d2e-3f4g5h6i7j8k"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "dependencies": {
+    "uuid": "^10.0.0",
+    "yt-dlp-exec": "^1.0.2"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}

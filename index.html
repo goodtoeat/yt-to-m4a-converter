@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube to M4A Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube to M4A Converter</h1>
+        
+        <div class="settings">
+            <span id="current-path-label">儲存路徑: </span>
+            <span id="current-path">載入中...</span>
+            <button id="change-path-btn">變更</button>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="url-input" placeholder="貼上 YouTube 網址 (https://www.youtube.com/watch?v=...)">
+            <select id="quality-select">
+                <option value="standard">標準音質 (128kbps)</option>
+                <option value="high">高品質 (256kbps+)</option>
+            </select>
+            <button id="add-btn">加入列表</button>
+        </div>
+
+        <div class="task-list" id="task-list">
+            <!-- Tasks will be added here dynamically -->
+            <div class="empty-state">尚無下載任務</div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>
